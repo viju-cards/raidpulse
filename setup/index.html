@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProgDeck – Setup Guide</title>
+<meta name="description" content="How to set up ProgDeck – the free live WoW boss & Mythic+ progress overlay for Twitch and OBS.">
+<link rel="icon" href="/raidpulse-icon.svg">
+<style>
+ *{box-sizing:border-box} html,body{margin:0;background:#0e1014;color:#e9edf3;font-family:system-ui,'Segoe UI',sans-serif;line-height:1.55}
+ a{color:#f2a24e}
+ .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+ .btn{display:inline-flex;gap:9px;align-items:center;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .1s}
+ .btn:hover{transform:translateY(-2px)} .dl{background:#e8862f;color:#14100a;box-shadow:0 6px 22px rgba(232,134,47,.35)}
+ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #1c2129}
+ .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:#e9edf3}
+ .logo img{width:30px;height:30px;border-radius:8px;display:block}
+ .lg-txt{display:flex;flex-direction:column;line-height:1.12}
+ .lg-name{font-size:20px;font-weight:800} .lg-by{font-size:11px;font-weight:500;color:#7f8a97;letter-spacing:.3px}
+ .hero{text-align:center;padding:52px 0 6px}
+ .hero h1{font-size:clamp(30px,4.6vw,48px);margin:0 0 12px;letter-spacing:.3px;font-weight:800}
+ .hero .grad{background:linear-gradient(90deg,#f2a24e,#e8862f);-webkit-background-clip:text;background-clip:text;color:transparent}
+ .hero p{font-size:17px;color:#a8b1bd;margin:0 auto;max-width:620px}
+ section{padding:52px 0;border-top:1px solid #1c2129} h2{font-size:clamp(22px,3vw,28px);margin:0 0 6px} .lead{color:#8b95a2;margin:0 0 30px}
+ .steps{display:flex;flex-direction:column;gap:16px}
+ .step{display:flex;gap:16px;background:#141820;border:1px solid #1f2630;border-radius:14px;padding:22px}
+ .step .sn{flex:0 0 36px;height:36px;border-radius:9px;background:#e8862f;color:#14100a;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
+ .step h3{margin:0 0 6px;color:#f2a24e;font-size:18px} .step p{margin:0 0 8px;color:#c2cad4;font-size:14.5px} .step p:last-child{margin-bottom:0}
+ .step ul{margin:0;padding-left:18px;color:#c2cad4;font-size:14.5px} .step li{margin:4px 0}
+ code{background:#0e1014;border:1px solid #2c333d;border-radius:5px;padding:1px 6px;font-size:13px;color:#cdd5df;word-break:break-all}
+ .imp{color:#f2a24e;font-weight:600}
+ .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+ .fcard{background:#141820;border:1px solid #1f2630;border-radius:14px;padding:20px} .fcard h3{margin:0 0 7px;color:#f2a24e;font-size:16px} .fcard p{margin:0;color:#8b95a2;font-size:14px}
+ .trow{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #171c24} .trow:last-child{border-bottom:0}
+ .tq{flex:0 0 42%;color:#e9edf3;font-weight:600;font-size:14.5px} .ta{color:#8b95a2;font-size:14px}
+ @media(max-width:640px){.trow{flex-direction:column;gap:4px}.tq{flex-basis:auto}}
+ footer{padding:34px;text-align:center;color:#5f6a77;font-size:13px;border-top:1px solid #1c2129}
+</style></head><body>
+ <div class="wrap">
+  <nav>
+    <a class="logo" href="/">
+      <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='rp' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f2a24e'/><stop offset='1' stop-color='%23d0741d'/></linearGradient></defs><rect width='64' height='64' rx='15' fill='url(%23rp)'/><path d='M11 35h9l5-14 6 24 5-16 4 6h12' fill='none' stroke='%231a1206' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" alt="">
+      <span class="lg-txt"><span class="lg-name">ProgDeck</span><span class="lg-by">by donnergockel</span></span>
+    </a>
+    <a class="btn dl" href="https://github.com/viju-cards/raidpulse/releases/latest/download/ProgDeck.zip">Download</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Setup <span class="grad">Guide</span></h1>
+    <p>Get your live raid &amp; Mythic+ progress on stream in a few minutes. You need WoW (Retail), OBS and the free ProgDeck download.</p>
+  </div>
+
+  <section>
+    <h2>Core setup</h2>
+    <p class="lead">Three things and you're live: run it, add it to OBS, install the addon.</p>
+    <div class="steps">
+      <div class="step"><span class="sn">1</span><div>
+        <h3>Download and run</h3>
+        <p>Download <b>ProgDeck.zip</b>, unzip it anywhere, and run <code>Overlay.exe</code>.</p>
+        <p>ProgDeck opens its <b>control panel</b> (the settings) in its own app window. You can close that window anytime — the overlay keeps running in the background so OBS still gets it. To fully quit ProgDeck, use <b>Quit app</b> in the panel.</p>
+      </div></div>
+
+      <div class="step"><span class="sn">2</span><div>
+        <h3>Add the overlay to OBS</h3>
+        <p>In OBS, add a new <b>Browser Source</b> and set:</p>
+        <ul>
+          <li>URL: <code>http://127.0.0.1:8787/overlay.html</code></li>
+          <li>Width <b>1920</b>, Height <b>360</b> — place it at the bottom of your scene</li>
+          <li>In the source <b>Properties</b>, tick <span class="imp">"Refresh browser when scene becomes active"</span> so it loads automatically when OBS starts</li>
+        </ul>
+        <p>Put your <b>webcam</b> as its own source over the transparent CAM area on the left.</p>
+      </div></div>
+
+      <div class="step"><span class="sn">3</span><div>
+        <h3>Install the WoW addon (for live boss HP)</h3>
+        <ul>
+          <li>Copy the <code>BossPixelExport</code> folder from the ZIP into your WoW <code>Interface/AddOns</code> folder</li>
+          <li>In game, type <code>/reload</code> (or restart WoW)</li>
+        </ul>
+        <p class="imp">Important: the small coloured pixels at the bottom-left of your screen must not be covered by anything (for example your chat box). The addon enables your combat log automatically.</p>
+      </div></div>
+
+      <div class="step"><span class="sn">4</span><div>
+        <h3>Configure</h3>
+        <p>The control panel is already open — or open <code>http://127.0.0.1:8787/home</code> in your browser. Set your streamer name, assign boss and dungeon images, pick a theme, and more. That's it — you're live.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Optional features</h2>
+    <p class="lead">All optional — set up only what you want, everything lives in the control panel.</p>
+    <div class="steps">
+
+      <div class="step"><div>
+        <h3>Twitch chat bot</h3>
+        <p>Your viewers can pull live info straight from chat: <code>!pull</code> <code>!best</code> <code>!recap</code> <code>!key</code> <code>!deaths</code>. The bot answers instantly from your current session data.</p>
+        <p><b>How to set it up:</b></p>
+        <ul>
+          <li>Go to <b>twitchtokengenerator.com</b>, authorize the account that should post the replies (your main account or a dedicated bot account) and select the scopes <b>chat:read</b> and <b>chat:edit</b>. Copy the <span class="imp">Access token</span> it shows — not the refresh token or the client ID.</li>
+          <li>In ProgDeck, open the <b>Twitch Bot</b> tile and enter your <b>Channel</b> (your Twitch name), the <b>Bot account</b> (the account the token belongs to) and paste the <b>Access token</b>.</li>
+          <li>Turn the commands you want on or off, and optionally reword their replies.</li>
+          <li>Click <b>Save &amp; connect</b> — it should report "Connected to Twitch chat".</li>
+        </ul>
+        <p class="imp">Keep the token private — never show it on stream. Anyone who has it can post as your bot.</p>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>Session recap auto-post</h3>
+        <p>At the end of a session (a new WoW login) ProgDeck automatically posts a summary of your night — plus a recap image — to Twitch chat and/or Discord. You can also post it any time mid-session with the <b>Post recap now</b> button.</p>
+        <p><b>How to set it up:</b></p>
+        <ul>
+          <li><b>Twitch chat:</b> tick "Post summary + image link in Twitch chat" (this needs the chat bot connected, see above).</li>
+          <li><b>Discord:</b> tick "Post to Discord" and add a webhook URL. To get one, open the <b>target channel in Discord &rarr; Edit Channel &rarr; Integrations &rarr; Webhooks &rarr; New Webhook</b>, then <b>Copy Webhook URL</b> and paste it in.</li>
+          <li>Click <b>Save &amp; connect Discord</b> to verify — a test message appears in the channel. Use <b>Send test</b> to preview the full recap post.</li>
+        </ul>
+        <p>The recap image is uploaded to catbox.moe so it can be shared as a public link.</p>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>OBS Auto-Clip</h3>
+        <p>Automatically records every boss pull through OBS and keeps only the <b>kills</b> — wipes and resets are discarded. You get a clean highlight folder without lifting a finger.</p>
+        <p><b>How to set it up:</b></p>
+        <ul>
+          <li>In OBS, open <b>Tools &rarr; WebSocket Server Settings</b>, enable the server, and note the <b>Port</b> (default 4455) and the <b>Password</b>.</li>
+          <li>In ProgDeck, open the <b>OBS Auto-Clip</b> tile, tick enable, and enter the host (<code>127.0.0.1</code>), the port and the password. Optionally choose a clip folder.</li>
+          <li>Click <b>Save &amp; connect</b>.</li>
+        </ul>
+        <p class="imp">If OBS is already recording your session, ProgDeck won't touch that recording.</p>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>Boss &amp; Mythic+ images and themes</h3>
+        <p>Make the overlay yours with custom art and colours.</p>
+        <ul>
+          <li><b>Boss / Mythic+ images:</b> under <b>Images</b>, pick the season and assign an image per boss or dungeon — via the file picker or drag &amp; drop.</li>
+          <li><b>Themes:</b> under <b>Overlay look &rarr; Themes</b>, pick a ready-made theme (accent colour, background, pattern) — including WoW-class colours and Sakura — or set the accent, background and pattern yourself.</li>
+        </ul>
+      </div></div>
+
+      <div class="step"><div>
+        <h3>WarcraftLogs import</h3>
+        <p>By default ProgDeck starts counting pulls from zero. This import fills in your <b>guild's history</b> from WarcraftLogs, so your pull counts and best tries are complete from day one instead of restarting. It enters the number of pulls up to the first kill for each boss and difficulty your guild has already killed — so a boss you've long killed shows its real prog count, not "1".</p>
+        <p><b>How to set it up:</b></p>
+        <ul>
+          <li>Get a WarcraftLogs API key: log in at <b>warcraftlogs.com</b>, open your <b>Profile &rarr; Web API</b>, create a client (give it any name) and copy the <b>V1 API key</b>.</li>
+          <li>In ProgDeck, open the <b>WarcraftLogs Import</b> tile and enter the <b>API key</b>, your <b>Guild</b> name, <b>Server</b> (realm) and <b>Region</b> (EU / US), then pick the <b>Raid</b>.</li>
+          <li>Click <b>Import pulls</b> — ProgDeck reads your guild's public reports and fills in the historical pull counts.</li>
+        </ul>
+      </div></div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Troubleshooting</h2>
+    <div style="max-width:820px">
+      <div class="trow"><div class="tq">The overlay doesn't show in OBS</div><div class="ta">Make sure <code>Overlay.exe</code> is running, then right-click the browser source &rarr; Refresh. Check the URL is exactly <code>http://127.0.0.1:8787/overlay.html</code>.</div></div>
+      <div class="trow"><div class="tq">Boss HP doesn't update</div><div class="ta">The coloured pixels at the bottom-left are covered (move your chat box), or the addon isn't loaded — type <code>/reload</code> in game and check the BossPixelExport folder is in Interface/AddOns.</div></div>
+      <div class="trow"><div class="tq">The control panel didn't open</div><div class="ta">Open it manually at <code>http://127.0.0.1:8787/home</code>. The server runs even without the window.</div></div>
+      <div class="trow"><div class="tq">Outside a raid I only see the cam</div><div class="ta">That's by design — the boss overlay appears in raids, the Mythic+ overlay when you start a keystone. You can change this in the settings.</div></div>
+    </div>
+  </section>
+ </div>
+ <footer>ProgDeck by donnergockel for World of Warcraft &nbsp;·&nbsp; <a href="/">progdeck.com</a><br><span style="font-size:12px;color:#4f5865">World of Warcraft is a registered trademark of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></footer>
+</body></html>
