@@ -9,6 +9,9 @@
  .btn{display:inline-flex;gap:9px;align-items:center;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .1s}
  .btn:hover{transform:translateY(-2px)} .dl{background:#e8862f;color:#14100a;box-shadow:0 6px 22px rgba(232,134,47,.35)}
  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #1c2129}
+ .navr{display:flex;align-items:center;gap:20px}
+ .navlink{color:#cdd5df;text-decoration:none;font-weight:600;font-size:15px;transition:color .1s}
+ .navlink:hover{color:#f2a24e}
  .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:#e9edf3}
  .logo img{width:30px;height:30px;border-radius:8px;display:block}
  .lg-txt{display:flex;flex-direction:column;line-height:1.12}
@@ -38,7 +41,10 @@
       <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='rp' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f2a24e'/><stop offset='1' stop-color='%23d0741d'/></linearGradient></defs><rect width='64' height='64' rx='15' fill='url(%23rp)'/><path d='M11 35h9l5-14 6 24 5-16 4 6h12' fill='none' stroke='%231a1206' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" alt="">
       <span class="lg-txt"><span class="lg-name">ProgDeck</span><span class="lg-by">by donnergockel</span></span>
     </a>
-    <a class="btn dl" href="https://github.com/viju-cards/raidpulse/releases/latest/download/ProgDeck.zip">Download</a>
+    <div class="navr">
+      <a class="navlink" href="https://discord.gg/hY6VYHjQj" target="_blank" rel="noopener">Discord</a>
+      <a class="btn dl" href="https://github.com/viju-cards/raidpulse/releases/latest/download/ProgDeck.zip">Download</a>
+    </div>
   </nav>
 
   <div class="hero">
@@ -158,5 +164,5 @@
     </div>
   </section>
  </div>
- <footer>ProgDeck by donnergockel for World of Warcraft &nbsp;·&nbsp; <a href="/">progdeck.com</a><br><span style="font-size:12px;color:#4f5865">World of Warcraft is a registered trademark of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></footer>
+ <footer><a class="navlink" href="https://discord.gg/hY6VYHjQj" target="_blank" rel="noopener">Discord</a> &nbsp;·&nbsp; <a class="navlink" href="/">progdeck.com</a><br><br>ProgDeck by donnergockel for World of Warcraft<br><span style="font-size:12px;color:#4f5865">World of Warcraft is a registered trademark of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></footer>
 </body></html>
