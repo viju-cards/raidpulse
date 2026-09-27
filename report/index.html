@@ -1,0 +1,190 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProgDeck – Report a bug or idea</title>
+<meta name="description" content="Report a bug, suggest a feature or ask for help with ProgDeck – the free live WoW boss & Mythic+ progress overlay for Twitch and OBS.">
+<link rel="icon" href="/raidpulse-icon.svg">
+<style>
+ *{box-sizing:border-box} html,body{margin:0;background:#0e1014;color:#e9edf3;font-family:system-ui,'Segoe UI',sans-serif;line-height:1.55}
+ a{color:#f2a24e}
+ .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+ .btn{display:inline-flex;gap:9px;align-items:center;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .1s;border:0;cursor:pointer;font-family:inherit}
+ .btn:hover{transform:translateY(-2px)} .dl{background:#e8862f;color:#14100a;box-shadow:0 6px 22px rgba(232,134,47,.35)}
+ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #1c2129;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+ .navr{display:flex;align-items:center;gap:20px}
+ .navlink{color:#cdd5df;text-decoration:none;font-weight:600;font-size:15px;transition:color .1s}.navlink:hover{color:#f2a24e}
+ .navicon{display:inline-flex;align-items:center;color:#cdd5df}.navicon svg{display:block}
+ .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:#e9edf3}
+ .logo img{width:30px;height:30px;border-radius:8px;display:block}
+ .lg-txt{display:flex;flex-direction:column;line-height:1.12}
+ .lg-name{font-size:20px;font-weight:800} .lg-by{font-size:11px;font-weight:500;color:#7f8a97;letter-spacing:.3px}
+ .hero{text-align:center;padding:48px 0 4px}
+ .hero h1{font-size:clamp(28px,4.4vw,44px);margin:0 0 12px;letter-spacing:.3px;font-weight:800}
+ .hero .grad{background:linear-gradient(90deg,#f2a24e,#e8862f);-webkit-background-clip:text;background-clip:text;color:transparent}
+ .hero p{font-size:16.5px;color:#a8b1bd;margin:0 auto;max-width:560px}
+ .card{background:#141820;border:1px solid #1f2630;border-radius:16px;padding:26px;margin:34px 0}
+ label{display:block;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#8b95a2;margin:0 0 7px}
+ .field{margin-bottom:20px}
+ .req{color:#e8862f}
+ input[type=email],textarea,select{width:100%;background:#0e1014;color:#e9edf3;border:1px solid #2c333d;border-radius:10px;padding:12px 13px;font-family:inherit;font-size:15px}
+ input[type=email]:focus,textarea:focus,select:focus{outline:none;border-color:#e8862f}
+ textarea{min-height:150px;resize:vertical;line-height:1.5}
+ .topics{display:flex;gap:10px;flex-wrap:wrap}
+ .topic{flex:1;min-width:150px;display:flex;align-items:center;gap:9px;background:#0e1014;border:1px solid #2c333d;border-radius:10px;padding:12px 14px;cursor:pointer;transition:.12s;font-weight:600;font-size:14.5px;color:#cdd5df}
+ .topic:hover{border-color:#3a424e}
+ .topic input{accent-color:#e8862f;width:16px;height:16px}
+ .topic.sel{border-color:#e8862f;background:#1a140c;color:#f2a24e}
+ .drop{border:1.5px dashed #333844;border-radius:11px;padding:16px;text-align:center;color:#8b95a2;font-size:13.5px;background:#0e1014;transition:.15s;cursor:pointer}
+ .drop.hot{border-color:#e8862f;color:#e9edf3}
+ .drop b{color:#f2a24e}
+ .thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+ .thumb{position:relative;width:74px;height:74px;border-radius:9px;overflow:hidden;border:1px solid #2c333d;background:#0e1014}
+ .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+ .thumb .x{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:6px;border:0;background:rgba(10,12,16,.85);color:#fff;font-size:13px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+ .hint{font-size:12.5px;color:#7f8a97;margin:7px 0 0}
+ .row{display:flex;align-items:center;gap:14px;margin-top:6px;flex-wrap:wrap}
+ #msg{font-size:14px;font-weight:600}
+ footer{padding:34px;text-align:center;color:#5f6a77;font-size:13px;border-top:1px solid #1c2129;margin-top:20px}
+</style></head><body>
+ <nav>
+   <a class="logo" href="/">
+     <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='rp' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f2a24e'/><stop offset='1' stop-color='%23d0741d'/></linearGradient></defs><rect width='64' height='64' rx='15' fill='url(%23rp)'/><path d='M11 35h9l5-14 6 24 5-16 4 6h12' fill='none' stroke='%231a1206' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" alt="">
+     <span class="lg-txt"><span class="lg-name">ProgDeck</span><span class="lg-by">by donnergockel</span></span>
+   </a>
+   <div class="navr">
+     <a class="navlink" href="/setup">Setup guide</a>
+     <a class="navlink navicon" href="https://discord.gg/hY6VYHjQj" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+     <a class="btn dl" href="https://github.com/viju-cards/raidpulse/releases/latest/download/ProgDeck.zip">Download</a>
+   </div>
+ </nav>
+ <div class="wrap">
+  <div class="hero">
+    <h1>Report a bug <span class="grad">or share an idea</span></h1>
+    <p>Found something broken, have a feature request, or need a hand? Send it straight to the developer.</p>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label>Topic <span class="req">*</span></label>
+      <div class="topics" id="topics">
+        <label class="topic sel"><input type="radio" name="topic" value="Bug Report" checked> Bug Report</label>
+        <label class="topic"><input type="radio" name="topic" value="Suggestion"> Suggestion</label>
+        <label class="topic"><input type="radio" name="topic" value="Help"> Help</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Your email <span class="req">*</span></label>
+      <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <p class="hint">So the developer can get back to you. Not shown publicly.</p>
+    </div>
+
+    <div class="field">
+      <label>Message <span class="req">*</span></label>
+      <textarea id="message" placeholder="What happened / what would you like? The more detail, the better – WoW version, which overlay (Raid / M+), steps to reproduce…"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Screenshots (optional)</label>
+      <div class="drop" id="drop">Drag images here &nbsp;·&nbsp; or <b>choose files</b><input id="file" type="file" accept="image/*" multiple style="display:none"></div>
+      <div class="thumbs" id="thumbs"></div>
+      <p class="hint">Up to 8 images, 8&nbsp;MB each.</p>
+    </div>
+
+    <div class="row">
+      <button class="btn dl" id="send" type="button">Send report</button>
+      <span id="msg"></span>
+    </div>
+  </div>
+
+  <footer>
+    ProgDeck by donnergockel &nbsp;·&nbsp; <a class="navlink" href="/" style="display:inline">progdeck.com</a>
+  </footer>
+ </div>
+
+<script>
+/* ------------------------------------------------------------------
+   WHERE REPORTS GO
+   Reports are sent to the Cloudflare Worker (report-worker.js), which
+   forwards them to your PRIVATE Discord channel. The Discord webhook
+   stays a SECRET inside the Worker and is NEVER in this public page.
+   Set ENDPOINT to your Worker URL (e.g. https://progdeck-report.<you>.workers.dev).
+   Leave empty to fall back to a mailto (FALLBACK_MAIL).
+   ── Do NOT paste a Discord webhook URL here – it would be public. ──
+------------------------------------------------------------------ */
+var ENDPOINT = "";  // <-- your Cloudflare Worker URL
+var FALLBACK_MAIL = "";  // optional: opens the visitor's mail app if ENDPOINT is empty. A public address here can attract spam.
+
+var files = [];
+var COLORS = { "Bug Report": 0xe0524a, "Suggestion": 0x46c98a, "Help": 0x3f8cf5 };
+function $(id){ return document.getElementById(id); }
+function setMsg(t,c){ var m=$('msg'); m.textContent=t; m.style.color=c||'#8b95a2'; }
+
+// topic selection styling
+document.querySelectorAll('.topic input').forEach(function(r){
+  r.addEventListener('change', function(){
+    document.querySelectorAll('.topic').forEach(function(l){ l.classList.remove('sel'); });
+    r.closest('.topic').classList.add('sel');
+  });
+});
+function topic(){ var r=document.querySelector('.topic input:checked'); return r?r.value:'Bug Report'; }
+
+// image handling
+function addFiles(list){
+  Array.prototype.slice.call(list).forEach(function(f){
+    if(!/^image\//.test(f.type)) return;
+    if(f.size > 8*1024*1024){ setMsg('"'+f.name+'" is larger than 8 MB and was skipped.', '#e0b060'); return; }
+    if(files.length >= 8){ setMsg('Max 8 images.', '#e0b060'); return; }
+    files.push(f); renderThumbs();
+  });
+}
+function renderThumbs(){
+  var box=$('thumbs'); box.innerHTML='';
+  files.forEach(function(f,i){
+    var d=document.createElement('div'); d.className='thumb';
+    var img=document.createElement('img'); img.src=URL.createObjectURL(f); img.onload=function(){URL.revokeObjectURL(img.src);};
+    var x=document.createElement('button'); x.className='x'; x.type='button'; x.textContent='×';
+    x.onclick=function(){ files.splice(i,1); renderThumbs(); };
+    d.appendChild(img); d.appendChild(x); box.appendChild(d);
+  });
+}
+var drop=$('drop');
+drop.addEventListener('click', function(){ $('file').click(); });
+$('file').addEventListener('change', function(e){ addFiles(e.target.files); e.target.value=''; });
+['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.add('hot'); }); });
+['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.remove('hot'); }); });
+drop.addEventListener('drop', function(e){ if(e.dataTransfer&&e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+
+// submit
+$('send').addEventListener('click', function(){
+  var email=$('email').value.trim(), message=$('message').value.trim(), tp=topic();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ setMsg('Please enter a valid email address.', '#e0705a'); $('email').focus(); return; }
+  if(!message){ setMsg('Please write a message.', '#e0705a'); $('message').focus(); return; }
+
+  if(!ENDPOINT || ENDPOINT.indexOf('http')!==0){
+    if(!FALLBACK_MAIL){ setMsg('Reporting isn’t configured yet.', '#e0b060'); return; }
+    // Fallback: open the visitor's mail client (images can't be attached this way)
+    var body = 'Topic: '+tp+'\n\n'+message+'\n\n(From: '+email+')';
+    window.location.href = 'mailto:'+FALLBACK_MAIL+'?subject='+encodeURIComponent('[ProgDeck] '+tp)+'&body='+encodeURIComponent(body);
+    setMsg('Opening your email app…', '#8b95a2');
+    return;
+  }
+
+  var btn=$('send'); btn.disabled=true; setMsg('Sending…','#8b95a2');
+  var payload = { username:'ProgDeck Reports', embeds:[{
+    title: tp, description: message.slice(0,3900), color: COLORS[tp]||0xe8862f,
+    fields:[{ name:'From', value: email.slice(0,256), inline:true }, { name:'Type', value: tp, inline:true }],
+    timestamp: new Date().toISOString(), footer:{ text:'progdeck.com/report' }
+  }] };
+  var fd = new FormData();
+  fd.append('payload_json', JSON.stringify(payload));
+  files.forEach(function(f,i){ fd.append('files['+i+']', f, f.name || ('image'+i+'.png')); });
+
+  fetch(ENDPOINT, { method:'POST', body: fd }).then(function(r){
+    btn.disabled=false;
+    if(r.ok){
+      setMsg('Thanks! Your report was sent. ✓', '#7bd88a');
+      $('message').value=''; files=[]; renderThumbs();
+    } else { setMsg('Sending failed (status '+r.status+'). Please try again later.', '#e0705a'); }
+  }).catch(function(){ btn.disabled=false; setMsg('Network error – please try again.', '#e0705a'); });
+});
+</script>
+</body></html>
