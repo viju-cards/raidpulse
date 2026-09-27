@@ -101,17 +101,9 @@
  </div>
 
 <script>
-/* ------------------------------------------------------------------
-   WHERE REPORTS GO
-   Reports are sent to the Cloudflare Worker (report-worker.js), which
-   forwards them to your PRIVATE Discord channel. The Discord webhook
-   stays a SECRET inside the Worker and is NEVER in this public page.
-   Set ENDPOINT to your Worker URL (e.g. https://progdeck-report.<you>.workers.dev).
-   Leave empty to fall back to a mailto (FALLBACK_MAIL).
-   ── Do NOT paste a Discord webhook URL here – it would be public. ──
------------------------------------------------------------------- */
-var ENDPOINT = "https://progdeck-report.juliansarbacher.workers.dev";  // <-- your Cloudflare Worker URL
-var FALLBACK_MAIL = "";  // optional: opens the visitor's mail app if ENDPOINT is empty. A public address here can attract spam.
+
+var ENDPOINT = "https://progdeck-report.juliansarbacher.workers.dev";  
+var FALLBACK_MAIL = "";  
 
 var files = [];
 var COLORS = { "Bug Report": 0xe0524a, "Suggestion": 0x46c98a, "Help": 0x3f8cf5 };
